@@ -11,13 +11,12 @@ contract SimpleStorage {
         uint 256 testVar = 5;
     }
 
-    function store(uint256 _favoriteNumber) public {
-        favoriteNumber = _favoriteNumber;
-        uint256 testVar = 5;
-    }
-
     function something() public {
         testVar = 6; // will raise a compilation error
         favoriteNumber = 7; // this can be accessed because it's in the main contract scope
+    }
+
+    function retrieve() public view returns(uint256) {
+    return favoriteNumber;
     }
 }
